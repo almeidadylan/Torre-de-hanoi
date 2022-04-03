@@ -32,6 +32,9 @@ h2.innerHTML = "Parabéns. Você ganhou!";
 h2.className = "h2_win";
 modalVitoria.appendChild(btnSair);
 modalVitoria.appendChild(h2)
+btnSair.addEventListener("click", function (e) {
+  modalVitoria.style.display = "none"
+})
 
 
 let dificult;
@@ -87,7 +90,6 @@ function idDisco (torre) {
         btn.addEventListener("click", function (e) {location.reload();})
         body.appendChild(modalVitoria)
         win = true;
-        return console.log("Você ganhou!");
       };
 
       return disco = null;
