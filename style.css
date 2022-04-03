@@ -124,9 +124,9 @@ span{
   border: none;
 }
 #modal_vitoria{
-  width: 300px;
-  height: 200px;
-  background-color: gray;
+  width: 500px;
+  height: 420px;
+  background-image: url(https://i.pinimg.com/originals/81/e2/55/81e255e0ceeca98084787662c4f7814c.gif);
   color: #000;
   position: absolute;
   margin: auto;
@@ -140,7 +140,6 @@ span{
   background-color: gray;
   padding: 5px 15px;
   font-size: 16px;
-
   border: none;
   font-weight: bold;
 }
