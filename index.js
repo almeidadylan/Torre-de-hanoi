@@ -1,41 +1,41 @@
-const body = document.querySelector("body");
-const h1 = document.createElement("h1");
-const h3 = document.createElement("h3");
-const section = document.createElement("section");
-const div = document.createElement("div");
-const span = document.createElement("span");
-const board = document.createElement("div");
-const torre1 = document.createElement("div");
-body.appendChild(section)
+const modalVitoria = document.createElement("section");
+const section      = document.createElement("section");
+const btnSair      = document.createElement("button");
+const span         = document.createElement("span");
+const body         = document.querySelector("body");
+const div          = document.createElement("div");
+const board        = document.createElement("div");
+const torre1       = document.createElement("div");
+const torre2       = document.createElement("div");
+const torre3       = document.createElement("div");
+const h1           = document.createElement("h1");
+const h2           = document.createElement("h2");
+const h3           = document.createElement("h3");
+torre1.className  = "torre1";
+torre2.className  = "torre2";
+torre3.className  = "torre3";
+board.className   = "Tabuleiro";
+btnSair.className = "btn_sair";
+h2.className      = "h2_win";
+modalVitoria.setAttribute("id", "modal_vitoria");
+h1.innerHTML      = "Torre de Hanói";
+h2.innerHTML      = "Parabéns. Você ganhou!";
+h3.innerHTML      = "Selecione a quantidade de discos";
+span.innerHTML    = "Maximo de 9 discos e minimo de 3 discos";
+btnSair.innerHTML = "X";
+body.appendChild(section);
 board.appendChild(torre1);
-torre1.className = "torre1";
-const torre2 = document.createElement("div");
 board.appendChild(torre2);
-torre2.className = "torre2";
-const torre3 = document.createElement("div");
 board.appendChild(torre3);
-torre3.className = "torre3";
-board.className = "Tabuleiro";
 section.appendChild(h1);
 section.appendChild(h3);
-h3.innerHTML = "Selecione a quantidade de discos";
-h1.innerHTML = "Torre de Hanoi";
 section.appendChild(span);
-span.innerHTML = "Maximo de 9 discos e minimo de 3 discos";
-const modalVitoria = document.createElement("section");
-modalVitoria.setAttribute("id", "modal_vitoria");
-const btnSair = document.createElement("button");
-btnSair.innerHTML = "X";
-btnSair.className = "btn_sair";
-const h2 = document.createElement("h2");
-h2.innerHTML = "Parabéns. Você ganhou!";
-h2.className = "h2_win";
 modalVitoria.appendChild(btnSair);
-modalVitoria.appendChild(h2)
-btnSair.addEventListener("click", function (e) {
-  modalVitoria.style.display = "none"
-})
+modalVitoria.appendChild(h2);
 
+btnSair.addEventListener("click", function (e) {
+  modalVitoria.style.display = "none";
+});
 
 let dificult;
 let disco = 0;
@@ -58,7 +58,7 @@ const tower1 = [];
 const tower2 = [];
 const tower3 = [];
 
-function idDisco (torre) {  
+function idDisco ( torre ) {  
   
   if (win) {
     return "";
@@ -83,12 +83,12 @@ function idDisco (torre) {
       h3.innerHTML = `Número de jogadas: ${jogadas}`;
 
       if ( tower3.length == dificult ) {
-        const btn = document.createElement("button")
-        btn.innerHTML = "voltar"
-        btn.className = "button_voltar"
-        section.appendChild(btn)
-        btn.addEventListener("click", function (e) {location.reload();})
-        body.appendChild(modalVitoria)
+        const btn = document.createElement("button");
+        btn.innerHTML = "voltar";
+        btn.className = "button_voltar";
+        section.appendChild(btn);
+        btn.addEventListener("click", function (e) {location.reload();});
+        body.appendChild(modalVitoria);
         win = true;
       };
 
@@ -99,47 +99,47 @@ function idDisco (torre) {
 
 function remover ( tower, torre ) {
 
-  for ( let i = 0; i <= tower.length; i++) {
+  for ( let i = 0; i <= tower.length; i++ ) {
 
-    if (tower[i] == disco) {
+    if ( tower[i] == disco ) {
       tower.splice(i, 1);
       mostrarTorre(tower, torre);
     };
   };
 };
 
-function deletarElemento (torre) {
+function deletarElemento ( torre ) {
 
   if ( torre == tower1 ) {
 
-    if ( tower2.includes(disco)) {
+    if ( tower2.includes(disco) ) {
       remover(tower2, torre2);    
     };
-    if ( tower3.includes(disco)) {
+    if ( tower3.includes(disco) ) {
       remover(tower3, torre3);  
     };
   };
   if ( torre == tower2 ) {
 
-    if( tower1.includes(disco)) {
+    if( tower1.includes(disco) ) {
       remover(tower1, torre1);  
     };
-    if ( tower3.includes(disco)) {
+    if ( tower3.includes(disco) ) {
       remover(tower3, torre3);
     };
   };
   if ( torre == tower3 ) {
 
-    if ( tower1.includes(disco)) {
+    if ( tower1.includes(disco) ) {
       remover(tower1, torre1);  
     };
-    if ( tower2.includes(disco)) {
+    if ( tower2.includes(disco) ) {
       remover(tower2, torre2);    
     };
   };
 };
 
-function mostrarTorre (array, torre) {
+function mostrarTorre ( array, torre ) {
 
   torre.innerHTML = "";
 
@@ -159,7 +159,7 @@ function mostrarTorre (array, torre) {
   };
 };
 
-function selectDificult() {
+function selectDificult () {
 
   section.appendChild(div);
 
@@ -182,12 +182,12 @@ function selectDificult() {
     const id = document.getElementById("digitado");
     dificult = parseInt(id.value);
 
-    if (parseInt(id.value) > 9) {
+    if ( parseInt(id.value) > 9 ) {
 
       dificult = 9;
 
     };
-    if (parseInt(id.value) < 3) {
+    if ( parseInt(id.value) < 3 ) {
 
       dificult = 3;
 
@@ -199,7 +199,7 @@ function selectDificult() {
 selectDificult();
 
 
-function createBoard() {
+function createBoard () {
  
   section.innerHTML = "";
   section.appendChild(h1);
