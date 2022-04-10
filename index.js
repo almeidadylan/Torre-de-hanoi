@@ -19,7 +19,7 @@ btnSair.className = "btn_sair";
 h2.className      = "h2_win";
 modalVitoria.setAttribute("id", "modal_vitoria");
 h1.innerHTML      = "Torre de Hanói";
-h2.innerHTML      = "Parabéns. Você ganhou!";
+h2.innerHTML      = "Parabéns! Você ganhou!";
 h3.innerHTML      = "Selecione a quantidade de discos";
 span.innerHTML    = "Maximo de 9 discos e minimo de 3 discos";
 btnSair.innerHTML = "X";
@@ -73,7 +73,7 @@ function moveDisk ( torre ) {
       
       if ( torre.length > 0 ) {
         if ( torre[0].value < disco.value ) {
-          return console.log("error: disco maior");
+          return "error: disco maior";
         };
       };
 
