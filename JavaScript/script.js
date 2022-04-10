@@ -1,62 +1,7 @@
-const modalVitoria = document.createElement("section");
-const section      = document.createElement("section");
-const btnSair      = document.createElement("button");
-const span         = document.createElement("span");
-const body         = document.querySelector("body");
-const div          = document.createElement("div");
-const board        = document.createElement("div");
-const torre1       = document.createElement("div");
-const torre2       = document.createElement("div");
-const torre3       = document.createElement("div");
-const h1           = document.createElement("h1");
-const h2           = document.createElement("h2");
-const h3           = document.createElement("h3");
-torre1.className  = "torre1";
-torre2.className  = "torre2";
-torre3.className  = "torre3";
-board.className   = "Tabuleiro";
-btnSair.className = "btn_sair";
-h2.className      = "h2_win";
-modalVitoria.setAttribute("id", "modal_vitoria");
-h1.innerHTML      = "Torre de Hanói";
-h2.innerHTML      = "Parabéns! Você ganhou!";
-h3.innerHTML      = "Selecione a quantidade de discos";
-span.innerHTML    = "Maximo de 9 discos e minimo de 3 discos";
-btnSair.innerHTML = "X";
-body.appendChild(section);
-board.appendChild(torre1);
-board.appendChild(torre2);
-board.appendChild(torre3);
-section.appendChild(h1);
-section.appendChild(h3);
-section.appendChild(span);
-modalVitoria.appendChild(btnSair);
-modalVitoria.appendChild(h2);
-
 btnSair.addEventListener("click", function (e) {
   modalVitoria.style.display = "none";
 });
 
-let dificult;
-let disco = 0;
-let jogadas = 0;
-let win = false;
-
-const listDisk = [ 
-  { name: "disco1", value: 1, color: "blue" },
-  { name: "disco2", value: 2, color: "yellow" },
-  { name: "disco3", value: 3, color: "red" },
-  { name: "disco4", value: 4, color: "green" },
-  { name: "disco5", value: 5, color: "cyan" },
-  { name: "disco6", value: 6, color: "pink" },
-  { name: "disco7", value: 7, color: "orange" },
-  { name: "disco8", value: 8, color: "brown" },
-  { name: "disco9", value: 9, color: "greenyellow" }
-];
-
-const tower1 = [];
-const tower2 = [];
-const tower3 = [];
 
 function moveDisk ( torre ) {  
   
