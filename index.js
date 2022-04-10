@@ -58,7 +58,7 @@ const tower1 = [];
 const tower2 = [];
 const tower3 = [];
 
-function idDisco ( torre ) {  
+function moveDisk ( torre ) {  
   
   if (win) {
     return "";
@@ -77,7 +77,7 @@ function idDisco ( torre ) {
         };
       };
 
-      deletarElemento(torre);
+      deleteElement(torre);
       torre.splice(0, 0, listDisk[i]);
       jogadas += 1; 
       h3.innerHTML = `Número de jogadas: ${jogadas}`;
@@ -103,12 +103,12 @@ function remover ( tower, torre ) {
 
     if ( tower[i] == disco ) {
       tower.splice(i, 1);
-      mostrarTorre(tower, torre);
+      showTower(tower, torre);
     };
   };
 };
 
-function deletarElemento ( torre ) {
+function deleteElement ( torre ) {
 
   if ( torre == tower1 ) {
 
@@ -139,7 +139,7 @@ function deletarElemento ( torre ) {
   };
 };
 
-function mostrarTorre ( array, torre ) {
+function showTower ( array, torre ) {
 
   torre.innerHTML = "";
 
@@ -149,6 +149,7 @@ function mostrarTorre ( array, torre ) {
     disk.className = array[i].name;
     disk.setAttribute("id", array[i].value);
     disk.style.backgroundColor = array[i].color;
+    disk.innerHTML = array[i].value
 
     disk.addEventListener("click", function (e) {
       
@@ -159,7 +160,7 @@ function mostrarTorre ( array, torre ) {
   };
 };
 
-function selectDificult () {
+function selectDifficulty () {
 
   section.appendChild(div);
 
@@ -196,7 +197,7 @@ function selectDificult () {
   });
 };
 
-selectDificult();
+selectDifficulty();
 
 
 function createBoard () {
@@ -211,34 +212,34 @@ function createBoard () {
     tower1.push(listDisk[i]);
   };
 
-  mostrarTorre(tower1, torre1);
-  mostrarTorre(tower3, torre3);
+  showTower(tower1, torre1);
+  showTower(tower3, torre3);
 
 };
 
 
 torre1.addEventListener("click", function (e) {
 
-  idDisco(tower1);
+  moveDisk(tower1);
 
-  mostrarTorre(tower1, torre1);
+  showTower(tower1, torre1);
 
 });
 
 
 torre2.addEventListener("click", function (e) {
 
-  idDisco(tower2);
+  moveDisk(tower2);
 
-  mostrarTorre(tower2, torre2);
+  showTower(tower2, torre2);
 
 });
 
 
 torre3.addEventListener("click", function (e) {
 
-  idDisco(tower3);
+  moveDisk(tower3);
 
-  mostrarTorre(tower3, torre3);
+  showTower(tower3, torre3);
 
 });
