@@ -1,6 +1,6 @@
 <h1 align="center"> Torre-de-hanoi </h1>
 
-#deploy: https://almeidadylan.github.io/Torre-de-hanoi/
+deploy: https://almeidadylan.github.io/Torre-de-hanoi/
 
 # Tabela de conteúdo
 
